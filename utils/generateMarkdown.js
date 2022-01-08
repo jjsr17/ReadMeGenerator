@@ -11,11 +11,17 @@ function renderLicenseBadge(license) {
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
-  if (license !== 'none') {
-    return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
+  let licenseLink = '';
+  if(license === 'MIT'){
+    licenseLink = 'https://choosealicense.com/licenses/mit/'
+  }else if (license === 'Apache 2.0'){
+    licenseLink = 'http://www.apache.org/licenses/License-2.0'
+  }else if (license === 'BSD v3.0'){
+    licenseLink = 'https://opensource.org/licenses/BSD-3-Clause'
+  }else{
+    licenseLink = ''
   }
-  return '';
-  
+  return licenseLink;
 }
 
 // TODO: Create a function that returns the license section of README
@@ -57,9 +63,11 @@ ${data.installation}
 
 ${data.usage}
 
+## Tests
+${data.tests}
+
 ${renderLicenseSection(data.license)}
 `
-;
-}
+};
 
 module.exports = generateMarkdown;

@@ -1,5 +1,5 @@
 // TODO: Include packages needed for this application
-let enquirer = require("inquirer");
+let inquirer = require('inquirer');
 let fs = require("fs");
 let path = require("path");
 let generateMarkdown = require("./utils/generateMarkdown");
@@ -7,43 +7,43 @@ let generateMarkdown = require("./utils/generateMarkdown");
 const questions = [
     {
         type: "input",
+        message: "What is the project's name?",
         name: "title",
-        message: "What is your project name",
     },
     {
         type: "input",
+        message: "Enter project description",
         name: "description",
-        message: "project description",
     },
     {
         type: "input",
+        message: "What is your github username?",
         name: "github",
-        message: "github username",
     },
     {
         type: "input",
+        message: "What is your email?",
         name: "email",
-        message: "what is your email?",
     },
     {
         type: "input",
-        name: "installation",
         message: "installation instructions",
+        name: "installation",
     }, 
     {
         type: "input",
-        name: "test",
         message: "running a test",
+        name: "test",
     }, 
     {
         type: "input",
-        name: "contributing",
         message: "what is the contribution?",
+        name: "contributing",
     }, 
     {
         type: "input",
-        name: "usage",
         message: "How do you use your proyect?",
+        name: "usage",
     },
     {
         type: "list",
@@ -62,7 +62,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    enquirer.prompt(questions)
+    inquirer.prompt(questions)
     .then((userAnswers) => {
         console.log("userAnswers",userAnswers);
         writeToFile("mygeneratedreadme.md", generateMarkdown({ ...userAnswers}));

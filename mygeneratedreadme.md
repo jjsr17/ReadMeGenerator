@@ -1,9 +1,9 @@
-# a
-  ![GitHub license](https://img.shields.io/badge/license-BSD 3-blue.svg)
+# project one
+  ![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
 
 ## Description
 
-b
+readme generator
 
 ## Table of contents
 
@@ -20,10 +20,13 @@ b
 ## Installation
 
 ```
-e
+install
 
 ## Usage 
 
-a
+many ways
 
+## Tests
 undefined
+
+## License This app is licensed under the MIT license.
